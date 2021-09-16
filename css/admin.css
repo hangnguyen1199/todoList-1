@@ -1,0 +1,26 @@
+.modal-title {
+    position: absolute;
+    left: 35%;
+    font-size: 30px;
+    color: blue;
+}
+
+.user-box label {
+    width: 35%;
+}
+
+.user-box input {
+    padding: 10px;
+    width: 50%;
+    height: 40px;
+    border: 1px solid rgb(226, 213, 213);
+    border-radius: 5px;
+}
+
+span {
+    margin-left: 37%;
+}
+
+.btn-delete {
+    margin-left: 10px;
+}

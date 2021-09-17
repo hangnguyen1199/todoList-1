@@ -251,10 +251,6 @@ td {
     display: flex;
 }
 
-#paging a {
-    text-decoration: none;
-}
-
 #paging a:hover {
     color: tomato;
 }

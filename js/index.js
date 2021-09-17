@@ -111,6 +111,7 @@ function addData() {
 function renderListUser() {
     var userCurrent = localStorage.getItem('userCurrent') ? JSON.parse(localStorage.getItem('userCurrent')) : [];
     var users = localStorage.getItem('users') ? JSON.parse(localStorage.getItem('users')) : [];
+    var days = Date.now();
     if (users.length === 0) {
         document.getElementById('list-user').style.display = 'none';
         return false;
@@ -126,6 +127,17 @@ function renderListUser() {
         </tr>`;
 
     users.forEach((user, index) => {
+        if (user.username == userCurrent.username && (days > new Date(user.day))) {
+            listUserHtml += `<tr>
+            <td id = "idUser">${index}</td>
+            <td>${user.work}</td>
+            <td>${user.description}</td>
+            <td>Hết hạn</td>
+            <td>${user.status}</td>
+            <td><button type='submit' class='btn btn-secondary btn-edit' onclick='editData(${index});'>Sửa</button><button type='submit' class='btn btn-danger btn-delete' onclick='deleteData();'>Xóa</button></td>
+            </tr>`;
+            return
+        }
         if (user.username == userCurrent.username) {
             listUserHtml += `<tr>
             <td id = "idUser">${index}</td>
@@ -135,7 +147,9 @@ function renderListUser() {
             <td>${user.status}</td>
             <td><button type='submit' class='btn btn-secondary btn-edit' onclick='editData(${index});'>Sửa</button><button type='submit' class='btn btn-danger btn-delete' onclick='deleteData();'>Xóa</button></td>
             </tr>`;
+            return
         }
+
     })
     document.getElementById('list-user').innerHTML = listUserHtml;
 
@@ -205,7 +219,7 @@ function Logout() {
     localStorage.removeItem('username');
     localStorage.removeItem('mail');
     localStorage.removeItem('userCurrent');
-    window.location.href = "http://127.0.0.1:5500/html/login.html#";
+    window.location.href = "http://127.0.0.1:5501/index.html#";
 
 }
 

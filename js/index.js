@@ -94,14 +94,10 @@ function addData() {
         username: userCurrent.username
     }
     users.push(user);
-
-    //check value empty
-
     if (user.work === "" || user.description === "" || user.status === "", user.day === "") {
         alert("Vui lòng nhập đây đủ thông tin!")
         return
     };
-
     localStorage.setItem('users', JSON.stringify(users));
     this.renderListUser();
     location.reload();
@@ -118,7 +114,6 @@ function renderListUser() {
     }
     document.getElementById('list-user').style.display = 'block';
     var listUserHtml = `<tr>
-        <td>#</td>
         <td>Name</td>
         <td>Mô tả</td>
         <td>Ngày hết hạn</td>
@@ -129,7 +124,6 @@ function renderListUser() {
     users.forEach((user, index) => {
         if (user.username == userCurrent.username && (days > new Date(user.day))) {
             listUserHtml += `<tr>
-            <td id = "idUser">${index}</td>
             <td>${user.work}</td>
             <td>${user.description}</td>
             <td>Hết hạn</td>
@@ -140,7 +134,6 @@ function renderListUser() {
         }
         if (user.username == userCurrent.username) {
             listUserHtml += `<tr>
-            <td id = "idUser">${index}</td>
             <td>${user.work}</td>
             <td>${user.description}</td>
             <td>${user.day}</td>
@@ -149,10 +142,8 @@ function renderListUser() {
             </tr>`;
             return
         }
-
     })
     document.getElementById('list-user').innerHTML = listUserHtml;
-
 }
 var idUser;
 
@@ -169,7 +160,6 @@ function editData(id) {
             document.getElementById('save').style.display = 'flex'
         }
     })
-
 }
 
 document.getElementById("save").addEventListener("click", function() {
@@ -212,27 +202,11 @@ function deleteData(id) {
     localStorage.removeItem("users")
     localStorage.setItem('users', JSON.stringify(users))
     location.reload();
-
 }
 
 function Logout() {
     localStorage.removeItem('username');
     localStorage.removeItem('mail');
     localStorage.removeItem('userCurrent');
-    window.location.href = "http://127.0.0.1:5501/index.html#";
-
+    location.href = "http://127.0.0.1:5501/index.html#";
 }
-
-
-
-// function checkStatus() {
-//     console.log(users.day);
-//     var isExpired = users.day < new Date() ? users.day = "Het han" : users.day;
-// }
-
-//pagination
-$('#paging').pagination({
-    dataSource: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
-    pageSize: 5,
-
-})

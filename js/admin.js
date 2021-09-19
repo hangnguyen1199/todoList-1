@@ -36,7 +36,6 @@ function renderListPerson() {
         <td>Mật khẩu</td>
         <td>Thao tác</td>
         </tr>`;
-
     person.forEach((personUser, index) => {
         listPersonHtml += `<tr>
         <td>${index}</td>
@@ -125,7 +124,7 @@ function Login() {
                     username: username
                 }
                 localStorage.setItem('userCurrent', JSON.stringify(user));
-                window.location.href = "http://127.0.0.1:5501/html/home.html"
+                location.href = "http://127.0.0.1:5501/html/home.html"
             } else {
                 document.getElementById("demo").innerHTML =
                     "Tên đăng nhập hoặc mật khẩu không đúng!";

@@ -125,7 +125,7 @@ function Login() {
                 }
                 localStorage.setItem('userCurrent', JSON.stringify(user));
                 console.log(123);
-                window.location.href = "../html/home.html"
+                window.location.href = "../home.html"
             } else {
                 document.getElementById("demo").innerHTML =
                     "Tên đăng nhập hoặc mật khẩu không đúng!";
@@ -133,5 +133,4 @@ function Login() {
         }
     }
 
-    // location.reload()
 }

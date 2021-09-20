@@ -123,7 +123,7 @@ function Login() {
                     username: username
                 }
                 localStorage.setItem('userCurrent', JSON.stringify(user));
-                window.location.href = "../home.html";
+                window.location.href = "home.html";
                 break;
             } else {
                 document.getElementById("demo").innerHTML =

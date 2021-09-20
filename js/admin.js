@@ -107,7 +107,6 @@ function deletePerson(id) {
     localStorage.removeItem("person")
     localStorage.setItem('person', JSON.stringify(person))
     location.reload();
-
 }
 var customer;
 
@@ -124,8 +123,8 @@ function Login() {
                     username: username
                 }
                 localStorage.setItem('userCurrent', JSON.stringify(user));
-                console.log(123);
-                window.location.href = "../home.html"
+                window.location.href = "../home.html";
+                break;
             } else {
                 document.getElementById("demo").innerHTML =
                     "Tên đăng nhập hoặc mật khẩu không đúng!";

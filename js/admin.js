@@ -124,7 +124,7 @@ function Login() {
                     username: username
                 }
                 localStorage.setItem('userCurrent', JSON.stringify(user));
-                location.href = "http://127.0.0.1:5501/html/home.html"
+                location.href = "../html/home.html"
             } else {
                 document.getElementById("demo").innerHTML =
                     "Tên đăng nhập hoặc mật khẩu không đúng!";

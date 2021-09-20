@@ -124,7 +124,8 @@ function Login() {
                     username: username
                 }
                 localStorage.setItem('userCurrent', JSON.stringify(user));
-                window.location.href = "./html/home.html"
+                console.log(123);
+                window.location.href = "../html/home.html"
             } else {
                 document.getElementById("demo").innerHTML =
                     "Tên đăng nhập hoặc mật khẩu không đúng!";

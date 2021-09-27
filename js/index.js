@@ -208,5 +208,5 @@ function Logout() {
     localStorage.removeItem('username');
     localStorage.removeItem('mail');
     localStorage.removeItem('userCurrent');
-    location.href = "../index.html";
+    window.location.href = "index.html";
 }
